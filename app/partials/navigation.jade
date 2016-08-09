@@ -1,0 +1,5 @@
+md-content
+  md-tabs.md-accent.md-hue-3(md-align-tabs="top", md-dynamic-height, md-swipe-content='true')
+    md-tab(ng-repeat='endpoint in endpoints', md-on-select="$state.go('app.navigation.tasks-list', {endpoint: endpoint.value})", label="{{ endpoint.label }}")
+      md-content
+        ui-view

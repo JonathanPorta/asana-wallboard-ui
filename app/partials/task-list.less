@@ -1,0 +1,53 @@
+.task-list{
+  md-list {
+    padding-top: 0;
+  }
+  md-chip {
+    height: 18px;
+    line-height: 18px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  h3.right {
+    text-align: right;
+    font-size: 28px !important;
+  }
+  .md-list-item-text.tags {
+    margin-left: 1em;
+  }
+  md-list-item {
+    .md-list-item-text>h3{
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+
+  // Styles showing the status of tasks
+  .past-due {
+    background-color: #FF4338;
+    .md-list-item-text>h3{
+      color: white !important;
+
+    }
+    md-chip {
+      background-color: white;
+      color: #FF4338;
+    }
+  }
+
+  .due-soon {
+    background-color: #F57C00;
+    .md-list-item-text>h3{
+      color: white !important;
+
+    }
+    md-chip {
+      background-color: white;
+      color: #F57C00;
+    }
+  }
+
+  md-list-item.not-actionable {
+    opacity: 0.4;
+  }
+}
