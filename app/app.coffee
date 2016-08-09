@@ -26,7 +26,7 @@ app.config ($mdThemingProvider, $urlRouterProvider, $stateProvider) ->
       $templateCache.get 'partials/navigation'
 
   $stateProvider.state 'app.navigation.tasks-list',
-    url: '/:endpoint'
+    url: '/:endpoint?autoAdvance&advanceRate'
     controller: 'TaskList'
     resolve:
       tasks: (TasksService, $stateParams) ->

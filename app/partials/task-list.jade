@@ -1,18 +1,14 @@
-md-content.task-list
+md-content.task-list(ng-cloak='')
   md-list(flex='')
-    md-list-item.md-2-line(
-      ng-repeat='task in tasks',
-      ng-class="{ 'not-actionable': !task.get('has_due_date') || !task.get('is_assigned'), 'past-due': task.get('is_past_due'), 'due-soon': task.get('is_due_soon') }"
-    )
-      img.md-avatar(ng-src="{{task.get('image')}}")
+    md-list-item.md-2-line(ng-repeat='task in tasks', class="{{task.attributes.status}}")
+      img.md-avatar(ng-src="{{task.attributes.image}}")
       .md-list-item-text(layout='row')
         .md-list-item-text(layout='column')
-          h3 {{ task.get('label') }}
+          h3 {{ task.attributes.label }}
           .md-list-item-text.tags(layout='row')
             small
               md-chips(ng-model="task.tags", readonly='true')
           
         .md-list-item-text(layout='column')
-          h3.right(ng-if="task.get('has_due_date')") Due {{ task.get('due_date_in_words') }}
-          h3.right(ng-if="!task.get('has_due_date')") {{ task.get('due_date_in_words') }}
+          h3.right {{ task.attributes.due_date_in_words }}
       md-divider(inset='')
