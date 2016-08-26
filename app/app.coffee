@@ -1,6 +1,11 @@
 app = angular.module 'asana-wallboard', ['ngMaterial', 'ui.router']
 
-app.run ($rootScope, $state, $stateParams) ->
+app.run ($rootScope, $state, $stateParams, $interval) ->
+  # Setup an auto refresh every 10 mins
+  $interval ->
+    window.location.reload()
+  , 600000
+
   $rootScope.$on "$stateChangeError", ->
     console.error 'Error Changing state', arguments
 
